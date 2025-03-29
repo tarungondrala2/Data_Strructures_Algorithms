@@ -30,6 +30,10 @@ public class Main {
 		myGraph.removeEdge("B", "A");
 		
 		myGraph.printGraph();
+		
+		myGraph.removeVertex("B");
+		
+		myGraph.printGraph();
 	}
 
 }
