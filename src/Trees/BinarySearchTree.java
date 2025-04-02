@@ -101,12 +101,15 @@ public class BinarySearchTree {
 		 return currentNode;
 	 }
 	 
+	 /*
+	  * This method will delete a node from BST using recursion.
+	  */
 	 public void deleteNode(int value) {
 		 deleteNode(root, value);
 	 }
 	 
 	 /*
-	  * This node will delete a node from BST using recursion.
+	  * This method is a helper to delete a node from BST and implements recursion.
 	  */
 	 private Node deleteNode(Node currentNode, int value) {
 		 
