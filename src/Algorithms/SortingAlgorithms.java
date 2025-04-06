@@ -32,6 +32,12 @@ public class SortingAlgorithms {
 		
 		System.out.println(Arrays.toString(mergeSortedArray));
 		
+		int[] myArray5 = {4,6,1,7,3,2,5};
+		
+		quickSort(myArray5);
+		
+		System.out.println(Arrays.toString(myArray5));
+		
 	}
 	
 	/*
@@ -155,5 +161,51 @@ public class SortingAlgorithms {
 		
 		return combined;
 	}
+	
+	/* 
+	 * This method along pivot method implements quick sort algorithm.
+	 */
+	private static void quickSortHelper(int[] array, int left, int right) {
+        if (left < right) {
+            int pivotIndex = pivot(array, left, right);
+            quickSortHelper(array, left, pivotIndex-1);
+            quickSortHelper(array, pivotIndex+1, right);
+        }
+    }
+	
+	/*
+	 * This method invokes quick sort algorithm implementation.
+	 */
+    public static void quickSort(int[] array) {
+        quickSortHelper(array, 0, array.length-1);
+    }
+
+	
+	/*
+	 * THis method is helper for quick sort.
+	 */
+	private static int pivot(int[] array, int pivotIndex, int endIndex) {
+		int swapIndex = pivotIndex;
+		for(int i = pivotIndex+1; i <= endIndex; i++) {
+			if(array[i] < array[pivotIndex]) {
+				swapIndex++;
+				swap(array, swapIndex, i);
+			}
+		}
+		swap(array, pivotIndex, swapIndex);
+		
+		return swapIndex;
+	}
+	
+	/* 
+	 * This method is helper method for pivot method in quick sort
+	 */
+	private static void swap(int[] array, int firstIndex, int secondIndex) {
+		int temp = array[firstIndex];
+		array[firstIndex] = array[secondIndex];
+		array[secondIndex] = temp;
+	}
+	
+	
 
 }
