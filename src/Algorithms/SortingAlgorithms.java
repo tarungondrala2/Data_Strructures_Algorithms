@@ -175,6 +175,9 @@ public class SortingAlgorithms {
 	
 	/*
 	 * This method invokes quick sort algorithm implementation.
+	 * 		
+	 * 			Time complexity - O(n log n) and O(n^2) if data is sorted
+	 * 			Space complexity - O(1)
 	 */
     public static void quickSort(int[] array) {
         quickSortHelper(array, 0, array.length-1);
