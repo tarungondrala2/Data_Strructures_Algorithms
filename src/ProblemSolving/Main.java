@@ -19,24 +19,9 @@ public class Main {
 //		
 //	}
 	
-	public static int[] reverseArrayByK(int[] array, int k) {
-	    List<Integer> myList = new ArrayList<>();
-	    for (int num : array) {
-	        myList.add(num);
-	    }
-
-	    for (int i = 1; i <= k; i++) {
-	        int temp = myList.remove(myList.size() - 1);
-	        myList.add(0, temp);
-	    }
-
-	    int[] result = new int[myList.size()];
-	    for (int i = 0; i < myList.size(); i++) {
-	        result[i] = myList.get(i);
-	    }
-
-	    return result;
-	}
+//	public static int[] reverseArrayByK(int[] array, int k) {
+//	    
+//	}
 
 	
 	public static int lengthOfLongestPalindrome(String string) {
